@@ -18,6 +18,10 @@
 		ECE437682631F71000FB2CEB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE437672631F71000FB2CEB /* MainViewController.swift */; };
 		ECE4376F2631F86D00FB2CEB /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE4376E2631F86D00FB2CEB /* DetailViewModel.swift */; };
 		ECE437732631F88D00FB2CEB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE437722631F88D00FB2CEB /* DetailViewController.swift */; };
+		ECE4377E2631FD8E00FB2CEB /* MyJsonServerApiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE4377D2631FD8E00FB2CEB /* MyJsonServerApiEndpoint.swift */; };
+		ECE437822632000A00FB2CEB /* MyJsonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE437812632000A00FB2CEB /* MyJsonService.swift */; };
+		ECE437882632014B00FB2CEB /* ContentsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE437872632014B00FB2CEB /* ContentsResponse.swift */; };
+		ECE4378D2632019100FB2CEB /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE4378C2632019100FB2CEB /* Content.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		ECE437672631F71000FB2CEB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		ECE4376E2631F86D00FB2CEB /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		ECE437722631F88D00FB2CEB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		ECE4377D2631FD8E00FB2CEB /* MyJsonServerApiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyJsonServerApiEndpoint.swift; sourceTree = "<group>"; };
+		ECE437812632000A00FB2CEB /* MyJsonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyJsonService.swift; sourceTree = "<group>"; };
+		ECE437872632014B00FB2CEB /* ContentsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsResponse.swift; sourceTree = "<group>"; };
+		ECE4378C2632019100FB2CEB /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,9 +97,11 @@
 			isa = PBXGroup;
 			children = (
 				ECE4372D2631F1DC00FB2CEB /* AppDelegate.swift */,
+				ECE4377A2631FB2600FB2CEB /* Service */,
+				ECE4374D2631F45A00FB2CEB /* Screens */,
+				ECE437842632010600FB2CEB /* Core */,
 				ECE437532631F4D500FB2CEB /* Base */,
 				ECE437612631F6BD00FB2CEB /* Modules */,
-				ECE4374D2631F45A00FB2CEB /* Screens */,
 				ECE4375E2631F62D00FB2CEB /* Resource */,
 			);
 			path = "my-test-app";
@@ -157,6 +167,48 @@
 				ECE437722631F88D00FB2CEB /* DetailViewController.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		ECE4377A2631FB2600FB2CEB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				ECE4377B2631FB4300FB2CEB /* MyJsonServerApiServise */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		ECE4377B2631FB4300FB2CEB /* MyJsonServerApiServise */ = {
+			isa = PBXGroup;
+			children = (
+				ECE4377D2631FD8E00FB2CEB /* MyJsonServerApiEndpoint.swift */,
+				ECE437812632000A00FB2CEB /* MyJsonService.swift */,
+			);
+			path = MyJsonServerApiServise;
+			sourceTree = "<group>";
+		};
+		ECE437842632010600FB2CEB /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				ECE437852632011000FB2CEB /* Model */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		ECE437852632011000FB2CEB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ECE437862632011F00FB2CEB /* ContentsResponse */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ECE437862632011F00FB2CEB /* ContentsResponse */ = {
+			isa = PBXGroup;
+			children = (
+				ECE437872632014B00FB2CEB /* ContentsResponse.swift */,
+				ECE4378C2632019100FB2CEB /* Content.swift */,
+			);
+			path = ContentsResponse;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,14 +324,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECE4377E2631FD8E00FB2CEB /* MyJsonServerApiEndpoint.swift in Sources */,
 				ECE437642631F6F600FB2CEB /* MainViewModel.swift in Sources */,
 				ECE4375A2631F52300FB2CEB /* ViewController.swift in Sources */,
 				ECE4376F2631F86D00FB2CEB /* DetailViewModel.swift in Sources */,
 				ECE4374F2631F47B00FB2CEB /* Screens.swift in Sources */,
 				ECE437682631F71000FB2CEB /* MainViewController.swift in Sources */,
 				ECE437562631F51000FB2CEB /* ViewModel.swift in Sources */,
+				ECE437822632000A00FB2CEB /* MyJsonService.swift in Sources */,
 				ECE4372E2631F1DC00FB2CEB /* AppDelegate.swift in Sources */,
 				ECE437732631F88D00FB2CEB /* DetailViewController.swift in Sources */,
+				ECE437882632014B00FB2CEB /* ContentsResponse.swift in Sources */,
+				ECE4378D2632019100FB2CEB /* Content.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
