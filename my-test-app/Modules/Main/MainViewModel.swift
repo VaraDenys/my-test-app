@@ -8,5 +8,4 @@
 import UIKit
 
 class MainViewModel: ViewModel {
-
 }
