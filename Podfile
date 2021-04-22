@@ -6,5 +6,6 @@ target 'my-test-app' do
   use_frameworks!
 
   pod 'SnapKit', '~> 5.0.0'
+  pod 'Moya', '~> 14.0'
 
 end
