@@ -3,17 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4BF5FBE3C1FF1BCB01DCCEDA /* Pods_my_test_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E5D6DE58D42806D6D43B77F /* Pods_my_test_app.framework */; };
 		ECE4372E2631F1DC00FB2CEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE4372D2631F1DC00FB2CEB /* AppDelegate.swift */; };
-		ECE437302631F1DC00FB2CEB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE4372F2631F1DC00FB2CEB /* SceneDelegate.swift */; };
-		ECE437322631F1DC00FB2CEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE437312631F1DC00FB2CEB /* ViewController.swift */; };
-		ECE437352631F1DC00FB2CEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECE437332631F1DC00FB2CEB /* Main.storyboard */; };
 		ECE437372631F1DD00FB2CEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECE437362631F1DD00FB2CEB /* Assets.xcassets */; };
 		ECE4373A2631F1DD00FB2CEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECE437382631F1DD00FB2CEB /* LaunchScreen.storyboard */; };
+		ECE4374F2631F47B00FB2CEB /* Screens.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE4374E2631F47B00FB2CEB /* Screens.swift */; };
+		ECE437562631F51000FB2CEB /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE437552631F51000FB2CEB /* ViewModel.swift */; };
+		ECE4375A2631F52300FB2CEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE437592631F52300FB2CEB /* ViewController.swift */; };
+		ECE437642631F6F600FB2CEB /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE437632631F6F600FB2CEB /* MainViewModel.swift */; };
+		ECE437682631F71000FB2CEB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE437672631F71000FB2CEB /* MainViewController.swift */; };
+		ECE4376F2631F86D00FB2CEB /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE4376E2631F86D00FB2CEB /* DetailViewModel.swift */; };
+		ECE437732631F88D00FB2CEB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE437722631F88D00FB2CEB /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,12 +26,16 @@
 		A24780D7A258AD78783736AC /* Pods-my-test-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-my-test-app.debug.xcconfig"; path = "Target Support Files/Pods-my-test-app/Pods-my-test-app.debug.xcconfig"; sourceTree = "<group>"; };
 		ECE4372A2631F1DC00FB2CEB /* my-test-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "my-test-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECE4372D2631F1DC00FB2CEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ECE4372F2631F1DC00FB2CEB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ECE437312631F1DC00FB2CEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		ECE437342631F1DC00FB2CEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ECE437362631F1DD00FB2CEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECE437392631F1DD00FB2CEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ECE4373B2631F1DD00FB2CEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECE4374E2631F47B00FB2CEB /* Screens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screens.swift; sourceTree = "<group>"; };
+		ECE437552631F51000FB2CEB /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		ECE437592631F52300FB2CEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ECE437632631F6F600FB2CEB /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		ECE437672631F71000FB2CEB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		ECE4376E2631F86D00FB2CEB /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		ECE437722631F88D00FB2CEB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +64,6 @@
 				A24780D7A258AD78783736AC /* Pods-my-test-app.debug.xcconfig */,
 				37AA0EF9F3861310930BEE6A /* Pods-my-test-app.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -82,14 +89,74 @@
 			isa = PBXGroup;
 			children = (
 				ECE4372D2631F1DC00FB2CEB /* AppDelegate.swift */,
-				ECE4372F2631F1DC00FB2CEB /* SceneDelegate.swift */,
-				ECE437312631F1DC00FB2CEB /* ViewController.swift */,
-				ECE437332631F1DC00FB2CEB /* Main.storyboard */,
+				ECE437532631F4D500FB2CEB /* Base */,
+				ECE437612631F6BD00FB2CEB /* Modules */,
+				ECE4374D2631F45A00FB2CEB /* Screens */,
+				ECE4375E2631F62D00FB2CEB /* Resource */,
+			);
+			path = "my-test-app";
+			sourceTree = "<group>";
+		};
+		ECE4374D2631F45A00FB2CEB /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				ECE4374E2631F47B00FB2CEB /* Screens.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		ECE437532631F4D500FB2CEB /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				ECE437542631F4E300FB2CEB /* MVVM */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		ECE437542631F4E300FB2CEB /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				ECE437592631F52300FB2CEB /* ViewController.swift */,
+				ECE437552631F51000FB2CEB /* ViewModel.swift */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
+		ECE4375E2631F62D00FB2CEB /* Resource */ = {
+			isa = PBXGroup;
+			children = (
 				ECE437362631F1DD00FB2CEB /* Assets.xcassets */,
 				ECE437382631F1DD00FB2CEB /* LaunchScreen.storyboard */,
 				ECE4373B2631F1DD00FB2CEB /* Info.plist */,
 			);
-			path = "my-test-app";
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		ECE437612631F6BD00FB2CEB /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				ECE4376D2631F85100FB2CEB /* Detail */,
+				ECE437622631F6D900FB2CEB /* Main */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		ECE437622631F6D900FB2CEB /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				ECE437672631F71000FB2CEB /* MainViewController.swift */,
+				ECE437632631F6F600FB2CEB /* MainViewModel.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		ECE4376D2631F85100FB2CEB /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				ECE4376E2631F86D00FB2CEB /* DetailViewModel.swift */,
+				ECE437722631F88D00FB2CEB /* DetailViewController.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,7 +220,6 @@
 			files = (
 				ECE4373A2631F1DD00FB2CEB /* LaunchScreen.storyboard in Resources */,
 				ECE437372631F1DD00FB2CEB /* Assets.xcassets in Resources */,
-				ECE437352631F1DC00FB2CEB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,23 +272,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECE437322631F1DC00FB2CEB /* ViewController.swift in Sources */,
+				ECE437642631F6F600FB2CEB /* MainViewModel.swift in Sources */,
+				ECE4375A2631F52300FB2CEB /* ViewController.swift in Sources */,
+				ECE4376F2631F86D00FB2CEB /* DetailViewModel.swift in Sources */,
+				ECE4374F2631F47B00FB2CEB /* Screens.swift in Sources */,
+				ECE437682631F71000FB2CEB /* MainViewController.swift in Sources */,
+				ECE437562631F51000FB2CEB /* ViewModel.swift in Sources */,
 				ECE4372E2631F1DC00FB2CEB /* AppDelegate.swift in Sources */,
-				ECE437302631F1DC00FB2CEB /* SceneDelegate.swift in Sources */,
+				ECE437732631F88D00FB2CEB /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		ECE437332631F1DC00FB2CEB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ECE437342631F1DC00FB2CEB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		ECE437382631F1DD00FB2CEB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -357,7 +420,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "my-test-app/Info.plist";
+				INFOPLIST_FILE = "my-test-app/Resource/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -365,7 +429,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "varadenys.my-test-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -376,7 +440,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "my-test-app/Info.plist";
+				INFOPLIST_FILE = "my-test-app/Resource/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -384,7 +449,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "varadenys.my-test-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
