@@ -13,7 +13,7 @@ class DetailViewModel: ViewModel {
     
     private var image: UIImage? = nil
     private var text: String? = nil
-    private var style: DetailVCStyle!
+    var style: DetailVCStyle!
     
     // MARK: - Init
     

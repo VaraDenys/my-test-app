@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 // MARK: - Func
         
         private func buildview() {
-            let mainView = Screens.main()
+            let mainView = Screens.quiz()
             let navigationController = UINavigationController(
                 rootViewController: mainView
             )

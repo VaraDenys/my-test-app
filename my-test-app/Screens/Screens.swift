@@ -12,6 +12,12 @@ struct Screens {
 
 // MARK: - Func
     
+    
+    static func quiz() -> UIViewController {
+        let vm = QuizViewModel()
+        return QuizViewController(viewModel: vm)
+    }
+    
     static func main() -> UIViewController {
         let vm = MainViewModel()
         return MainViewController(viewModel: vm)

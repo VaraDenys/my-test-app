@@ -18,7 +18,8 @@ class MainViewModel: ViewModel {
     
     var onDidChange: (() -> Void)!
     var onDidError: ((ApiErrorType) -> Void)!
-    var onDidSelectCell: ((UIViewController) -> Void)!
+    var onDidSelectCellImage: ((UIViewController) -> Void)!
+    var onDidSelectCellText: ((UIViewController) -> Void)!
     
     // MARK: - Public func
     
@@ -64,10 +65,12 @@ class MainViewModel: ViewModel {
         let model = self.getItem(for: indexPath)
         if model.image != nil {
             let vc = Screens.detail(model: model, style: .image)
-            onDidSelectCell(vc)
+            vc.modalPresentationStyle = .fullScreen
+            vc.modalTransitionStyle = .coverVertical
+            onDidSelectCellImage(vc)
         } else {
             let vc = Screens.detail(model: model, style: .text)
-            onDidSelectCell(vc)
+            onDidSelectCellImage(vc)
         }
     }
     

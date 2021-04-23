@@ -25,7 +25,7 @@ class MainTableViewCell: TableViewCell {
         self.contentView.addSubview(myImageView)
         
         myLabelView.snp.makeConstraints({
-            $0.edges.equalToSuperview()
+            $0.edges.equalToSuperview().inset(16)
         })
         myImageView.snp.makeConstraints({
             $0.edges.equalToSuperview()
@@ -35,9 +35,11 @@ class MainTableViewCell: TableViewCell {
     override func setupView() {
         super.setupView()
         
+        clipsToBounds = true
+        
         myLabelView.numberOfLines = 0
         
-        myImageView.contentMode = .scaleAspectFit
+        myImageView.contentMode = .scaleAspectFill
     }
     
 // MARK: - Public func

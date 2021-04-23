@@ -60,7 +60,11 @@ class MainViewController: ViewController<MainViewModel> {
             // do something with error
         }
         
-        viewModel.onDidSelectCell = { [weak self] vc in
+        viewModel.onDidSelectCellImage = { [weak self] vc in
+            self?.navigationController?.present(vc, animated: true, completion: nil)
+        }
+        
+        viewModel.onDidSelectCellText = { [weak self] vc in
             self?.navigationController?.pushViewController(vc, animated: true)
         }
     }
