@@ -43,6 +43,7 @@ class MainViewController: ViewController<MainViewModel> {
     override func setupNavigationController() {
         super.setupNavigationController()
         
+        navigationController?.navigationBar.isHidden = false
         navigationItem.title = "Main"
     }
     
@@ -91,7 +92,11 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         
         let item = viewModel.getItem(for: indexPath)
         
-        cell.configure(model: item)
+        if item.image != nil {
+            cell.configure(model: item, style: .image)
+        } else {
+            cell.configure(model: item, style: .text)
+        }
         
         return cell
     }

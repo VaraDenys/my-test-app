@@ -52,6 +52,7 @@ class MyJsonService {
                             completion(.failure(.invalidParsing))
                             return
                         }
+                    self.cache.insertImage(image, for: url)
                         completion(.success(image))
                 case .failure(_):
                     completion(.failure(.invalidRequest))

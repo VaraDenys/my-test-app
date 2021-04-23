@@ -61,7 +61,14 @@ class MainViewModel: ViewModel {
     }
     
     public func didSelectCell(indexPath: IndexPath) {
-        self.onDidSelectCell(UIViewController())
+        let model = self.getItem(for: indexPath)
+        if model.image != nil {
+            let vc = Screens.detail(model: model, style: .image)
+            onDidSelectCell(vc)
+        } else {
+            let vc = Screens.detail(model: model, style: .text)
+            onDidSelectCell(vc)
+        }
     }
     
     public func getSection() -> Int {

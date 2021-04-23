@@ -14,11 +14,13 @@ class MainTableViewCell: TableViewCell {
     
     private lazy var myLabelView = UILabel()
     private lazy var myImageView = UIImageView()
+    private var style: MainCellStyle?
     
 // MARK: - Override func
     
     override func setupConstraints() {
         super.setupConstraints()
+        
         self.contentView.addSubview(myLabelView)
         self.contentView.addSubview(myImageView)
         
@@ -40,17 +42,19 @@ class MainTableViewCell: TableViewCell {
     
 // MARK: - Public func
     
-    public func configure(model: MainCellModel) {
-        guard let image = model.image else {
-            self.myImageView.isHidden = true
+    public func configure(model: MainCellModel, style: MainCellStyle) {
+        switch style {
+        case .image:
+            self.myLabelView.text = nil
+            self.myImageView.image = model.image
+        case .text:
             self.myImageView.image = nil
-            self.myLabelView.isHidden = false
             self.myLabelView.text = model.text
-            return
         }
-        self.myImageView.isHidden = false
-        self.myLabelView.isHidden = true
-        self.myLabelView.text = nil
-        self.myImageView.image = image
     }
+}
+
+enum MainCellStyle {
+    case image
+    case text
 }

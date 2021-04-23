@@ -31,12 +31,13 @@ class ViewController<VM: ViewModel>: UIViewController {
         
         setupConstraints()
         setupView()
+        setupNavigationController()
         binding()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+    
         setupNavigationController()
     }
 // MARK: - Public func

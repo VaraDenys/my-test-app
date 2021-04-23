@@ -16,4 +16,10 @@ struct Screens {
         let vm = MainViewModel()
         return MainViewController(viewModel: vm)
     }
+    
+    static func detail(model: MainCellModel, style: DetailVCStyle) -> UIViewController {
+        let vm = DetailViewModel(model: model, style: style)
+        let vc = DetailViewController(viewModel: vm)
+        return vc
+    }
 }
