@@ -31,9 +31,20 @@ class ViewController<VM: ViewModel>: UIViewController {
         
         setupConstraints()
         setupView()
+        binding()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        setupNavigationController()
     }
 // MARK: - Public func
     
     public func setupConstraints() {}
-    public func setupView() {}
+    public func setupView() {
+        self.view.backgroundColor = .white
+    }
+    public func setupNavigationController() {}
+    public func binding() {}
 }

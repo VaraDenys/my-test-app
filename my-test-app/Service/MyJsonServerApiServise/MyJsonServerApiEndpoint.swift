@@ -18,28 +18,36 @@ struct ParamsEndpoint {
 
 enum  MyJsonServerEndPoint {
     case getContent
+    case downloadImage(URL)
 }
 
 // MARK: - Extension
 
 extension MyJsonServerEndPoint: TargetType {
     var baseURL: URL {
-        guard let url = ConstantsEndpoint.domainURL else {
-            fatalError("invalid domain URL")
+        switch self {
+        case .getContent:
+            guard let url = ConstantsEndpoint.domainURL else {
+                fatalError("invalid domain URL")
+            }
+            return url
+        case .downloadImage(let url):
+            return url
         }
-        return url
     }
     
     var path: String {
         switch self {
         case .getContent:
             return "/MaxTopDev/test-fake-json/db"
+        case .downloadImage(_):
+            return ""
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getContent:
+        case .getContent, .downloadImage(_):
             return .get
         }
     }

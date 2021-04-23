@@ -22,6 +22,11 @@
 		ECE437822632000A00FB2CEB /* MyJsonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE437812632000A00FB2CEB /* MyJsonService.swift */; };
 		ECE437882632014B00FB2CEB /* ContentsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE437872632014B00FB2CEB /* ContentsResponse.swift */; };
 		ECE4378D2632019100FB2CEB /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE4378C2632019100FB2CEB /* Content.swift */; };
+		ECE4379F26320E4400FB2CEB /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE4379E26320E4400FB2CEB /* TableViewCell.swift */; };
+		ECE437A326320F3900FB2CEB /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE437A226320F3900FB2CEB /* MainTableViewCell.swift */; };
+		ECE437A72632113400FB2CEB /* MainCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE437A62632113400FB2CEB /* MainCellModel.swift */; };
+		ECE437AD26329B4100FB2CEB /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE437AC26329B4100FB2CEB /* ImageCache.swift */; };
+		ECE437B526329F6100FB2CEB /* MainTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE437B426329F6100FB2CEB /* MainTableViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +49,11 @@
 		ECE437812632000A00FB2CEB /* MyJsonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyJsonService.swift; sourceTree = "<group>"; };
 		ECE437872632014B00FB2CEB /* ContentsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsResponse.swift; sourceTree = "<group>"; };
 		ECE4378C2632019100FB2CEB /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
+		ECE4379E26320E4400FB2CEB /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		ECE437A226320F3900FB2CEB /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		ECE437A62632113400FB2CEB /* MainCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCellModel.swift; sourceTree = "<group>"; };
+		ECE437AC26329B4100FB2CEB /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		ECE437B426329F6100FB2CEB /* MainTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +128,7 @@
 		ECE437532631F4D500FB2CEB /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				ECE4379D26320E2800FB2CEB /* Views */,
 				ECE437542631F4E300FB2CEB /* MVVM */,
 			);
 			path = Base;
@@ -156,6 +167,8 @@
 			children = (
 				ECE437672631F71000FB2CEB /* MainViewController.swift */,
 				ECE437632631F6F600FB2CEB /* MainViewModel.swift */,
+				ECE437A52632110500FB2CEB /* Model */,
+				ECE4379C26320E0F00FB2CEB /* Components */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -172,6 +185,7 @@
 		ECE4377A2631FB2600FB2CEB /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				ECE437AB26329B1200FB2CEB /* ImageCache */,
 				ECE4377B2631FB4300FB2CEB /* MyJsonServerApiServise */,
 			);
 			path = Service;
@@ -209,6 +223,39 @@
 				ECE4378C2632019100FB2CEB /* Content.swift */,
 			);
 			path = ContentsResponse;
+			sourceTree = "<group>";
+		};
+		ECE4379C26320E0F00FB2CEB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				ECE437A226320F3900FB2CEB /* MainTableViewCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		ECE4379D26320E2800FB2CEB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ECE4379E26320E4400FB2CEB /* TableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ECE437A52632110500FB2CEB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ECE437B426329F6100FB2CEB /* MainTableViewModel.swift */,
+				ECE437A62632113400FB2CEB /* MainCellModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ECE437AB26329B1200FB2CEB /* ImageCache */ = {
+			isa = PBXGroup;
+			children = (
+				ECE437AC26329B4100FB2CEB /* ImageCache.swift */,
+			);
+			path = ImageCache;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,15 +371,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECE4379F26320E4400FB2CEB /* TableViewCell.swift in Sources */,
 				ECE4377E2631FD8E00FB2CEB /* MyJsonServerApiEndpoint.swift in Sources */,
+				ECE437AD26329B4100FB2CEB /* ImageCache.swift in Sources */,
 				ECE437642631F6F600FB2CEB /* MainViewModel.swift in Sources */,
 				ECE4375A2631F52300FB2CEB /* ViewController.swift in Sources */,
 				ECE4376F2631F86D00FB2CEB /* DetailViewModel.swift in Sources */,
+				ECE437A72632113400FB2CEB /* MainCellModel.swift in Sources */,
 				ECE4374F2631F47B00FB2CEB /* Screens.swift in Sources */,
 				ECE437682631F71000FB2CEB /* MainViewController.swift in Sources */,
 				ECE437562631F51000FB2CEB /* ViewModel.swift in Sources */,
+				ECE437B526329F6100FB2CEB /* MainTableViewModel.swift in Sources */,
 				ECE437822632000A00FB2CEB /* MyJsonService.swift in Sources */,
 				ECE4372E2631F1DC00FB2CEB /* AppDelegate.swift in Sources */,
+				ECE437A326320F3900FB2CEB /* MainTableViewCell.swift in Sources */,
 				ECE437732631F88D00FB2CEB /* DetailViewController.swift in Sources */,
 				ECE437882632014B00FB2CEB /* ContentsResponse.swift in Sources */,
 				ECE4378D2632019100FB2CEB /* Content.swift in Sources */,
