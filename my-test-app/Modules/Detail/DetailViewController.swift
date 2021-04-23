@@ -10,12 +10,12 @@ import SnapKit
 
 class DetailViewController: ViewController<DetailViewModel> {
     
-// MARK: - Private properties
+    // MARK: - Private properties
     
     private lazy var labelView = UILabel()
     private lazy var scrollView = DetailScrollView()
     
-// MARK: - Override func
+    // MARK: - Override func
     
     override func setupConstraints() {
         super.setupConstraints()
@@ -32,7 +32,7 @@ class DetailViewController: ViewController<DetailViewModel> {
                 $0.edges.equalToSuperview()
             })
         }
-
+        
     }
     
     override func setupView() {
@@ -53,7 +53,7 @@ class DetailViewController: ViewController<DetailViewModel> {
         case .image:
             navigationController?.navigationBar.isHidden = true
         case .text:
-            navigationController?.navigationBar.isHidden = true
+            navigationController?.navigationBar.isHidden = false
         }
     }
 }

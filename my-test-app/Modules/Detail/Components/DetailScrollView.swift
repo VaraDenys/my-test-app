@@ -9,7 +9,11 @@ import UIKit
 
 class DetailScrollView: ScrollView {
     
+    // MARK: - Private properties
+    
     private lazy var imageView = UIImageView()
+    
+    // MARK: - Override func
     
     override func setupConstraints() {
         super.setupConstraints()
@@ -31,7 +35,7 @@ class DetailScrollView: ScrollView {
         centerImageView()
     }
     
-//  MARK: - Private func
+    //  MARK: - Private func
     
     private func setCurrentScale(imageSize: CGSize) {
         let widht = imageSize.width
@@ -50,22 +54,23 @@ class DetailScrollView: ScrollView {
     private func centerImageView() {
         let boundsSize = bounds.size
         var frameToCenter = imageView.frame
-
+        
         if frameToCenter.size.width < boundsSize.width {
             frameToCenter.origin.x = (boundsSize.width - frameToCenter.size.width) / 2
         } else {
             frameToCenter.origin.x = 0
         }
-
+        
         if frameToCenter.size.height < boundsSize.height {
             frameToCenter.origin.y = (boundsSize.height - frameToCenter.size.height) / 2
         } else {
             frameToCenter.origin.y = 0
         }
-
+        
         imageView.frame = frameToCenter
     }
-// MARK: - Public func
+    
+    // MARK: - Public func
     
     public func configure(image: UIImage) {
         self.imageView.image = image

@@ -9,13 +9,13 @@ import UIKit
 
 class DetailViewModel: ViewModel {
     
-// MARK: - Private properties
+    // MARK: - Private properties
     
     private var image: UIImage? = nil
     private var text: String? = nil
     private var style: DetailVCStyle!
     
-// MARK: - Init
+    // MARK: - Init
     
     init(model: MainCellModel, style: DetailVCStyle) {
         super.init()
@@ -28,7 +28,7 @@ class DetailViewModel: ViewModel {
         }
     }
     
-// MARK: - Public func
+    // MARK: - Public func
     
     public func getStyle() -> DetailVCStyle {
         return self.style
