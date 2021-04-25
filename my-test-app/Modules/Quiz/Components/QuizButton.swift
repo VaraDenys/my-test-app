@@ -11,6 +11,7 @@ class QuizButton: Button {
     
 // MARK: - Private properties
     
+    var realization: ConstantRealization = .programmatically
     
     override func setupView() {
         super.setupView()
@@ -20,7 +21,14 @@ class QuizButton: Button {
         setTitleColor(.black, for: .normal)
     }
     
-    public func configure(title: String) {
-        self.setTitle(title, for: .normal)
+    public func configure(realization: ConstantRealization) {
+        switch realization {
+        case .storyboard:
+            self.realization = realization
+            self.setTitle("storyboard", for: .normal)
+        case .programmatically:
+            self.realization = realization
+            self.setTitle("programmatically", for: .normal)
+        }
     }
 }

@@ -17,9 +17,11 @@ class TableViewCell: UITableViewCell {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+        setupViewNib()
     }
     
     public func setupConstraints() {}
     public func setupView() {}
+    public func setupViewNib() {}
 }

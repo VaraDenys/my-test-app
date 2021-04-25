@@ -11,7 +11,8 @@ class ViewController<VM: ViewModel>: UIViewController {
     
 // MARK: - Properties
     
-    public let viewModel: VM
+    public var viewModel: VM
+    public var fromStoryboard: Bool = false
     
 // MARK: - Constructor
     
@@ -21,7 +22,9 @@ class ViewController<VM: ViewModel>: UIViewController {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        self.fromStoryboard = true
+        self.viewModel = MainViewModel() as! VM
+        super.init(coder: coder)
     }
     
 // MARK: - Life cycle
@@ -29,9 +32,16 @@ class ViewController<VM: ViewModel>: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupConstraints()
-        setupView()
+        guard fromStoryboard else {
+            setupConstraints()
+            setupView()
+            setupNavigationController()
+            binding()
+            return
+        }
+
         setupNavigationController()
+        setupViewFromNib()
         binding()
     }
     
@@ -48,4 +58,5 @@ class ViewController<VM: ViewModel>: UIViewController {
     }
     public func setupNavigationController() {}
     public func binding() {}
+    public func setupViewFromNib() {}
 }

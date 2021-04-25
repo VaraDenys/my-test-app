@@ -14,6 +14,21 @@ class MainViewController: ViewController<MainViewModel> {
     
     private lazy var tableView = UITableView(frame: .zero, style: .grouped)
     
+//    MARK: - Nib properties
+    
+    @IBOutlet weak var tableViewNib: UITableView!
+    
+//    MARK: - Override init
+    
+    override init(viewModel: MainViewModel) {
+        super.init(viewModel: viewModel)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        self.viewModel = MainViewModel()
+    }
+    
     // MARK: - Life cycle
     
     override func viewDidLoad() {
@@ -35,7 +50,7 @@ class MainViewController: ViewController<MainViewModel> {
     override func setupView() {
         super.setupView()
         
-        tableView.register(MainTableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(MainTableViewCell.self, forCellReuseIdentifier: "MainTableViewCell")
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -47,11 +62,23 @@ class MainViewController: ViewController<MainViewModel> {
         navigationItem.title = "Main"
     }
     
+    override func setupViewFromNib() {
+        super.setupViewFromNib()
+        
+        let nib = UINib(nibName: "MainTableViewCell", bundle: nil)
+        tableViewNib.register(nib, forCellReuseIdentifier: "MainTableViewCell")
+        tableViewNib.delegate = self
+        tableViewNib.dataSource = self
+    }
+    
     override func binding() {
         super.binding()
         
         viewModel.onDidChange = { [weak self] in
             DispatchQueue.main.async {
+                if let tableV = self?.tableViewNib {
+                    tableV.reloadData()
+                }
                 self?.tableView.reloadData()
             }
         }
@@ -60,12 +87,13 @@ class MainViewController: ViewController<MainViewModel> {
             // do something with error
         }
         
-        viewModel.onDidSelectCellImage = { [weak self] vc in
-            self?.navigationController?.present(vc, animated: true, completion: nil)
-        }
-        
-        viewModel.onDidSelectCellText = { [weak self] vc in
-            self?.navigationController?.pushViewController(vc, animated: true)
+        viewModel.onDidSelectCell = { [weak self] (vc, style) in
+            switch style {
+            case .image:
+                self?.navigationController?.present(vc, animated: true, completion: nil)
+            case .text:
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }
         }
     }
 }
@@ -87,9 +115,11 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let identifier = "MainTableViewCell"
+        
         guard let cell = tableView
                 .dequeueReusableCell(
-                    withIdentifier: "cell",
+                    withIdentifier: identifier,
                     for: indexPath) as? MainTableViewCell else {
             fatalError("No find cell with identifier - \"cell\"")
         }

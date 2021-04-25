@@ -16,11 +16,23 @@ class DetailViewController: ViewController<DetailViewModel> {
     private lazy var scrollView = DetailScrollView()
     
     private lazy var swipe: UISwipeGestureRecognizer = {
-       let ges = UISwipeGestureRecognizer()
+        let ges = UISwipeGestureRecognizer()
         ges.direction = .down
         ges.addTarget(self, action: #selector(swipeDown))
         return ges
     }()
+    
+    //    MARK: - Life cycle
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.resumeFetch()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        scrollView.layoutSubviews()
+    }
     
     // MARK: - Override func
     
@@ -62,6 +74,22 @@ class DetailViewController: ViewController<DetailViewModel> {
             navigationController?.navigationBar.isHidden = false
         }
     }
+    
+    override func binding() {
+        super.binding()
+        self.viewModel.onDidChange = { [weak self] style in
+            switch style {
+            case .text:
+                self?.labelView.text = self?.viewModel.getText()
+            case .image:
+                DispatchQueue.main.async {
+                    self?.scrollView.configure(image: self?.viewModel.getImage() ?? UIImage())
+                }
+            }
+        }
+    }
+    
+//    MARK: - User interaction
     
     @objc private func swipeDown() {
         self.dismiss(animated: true, completion: nil)

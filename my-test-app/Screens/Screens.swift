@@ -9,8 +9,8 @@ import Foundation
 import UIKit
 
 struct Screens {
-
-// MARK: - Func
+    
+    // MARK: - Func
     
     
     static func quiz() -> UIViewController {
@@ -23,9 +23,13 @@ struct Screens {
         return MainViewController(viewModel: vm)
     }
     
-    static func detail(model: MainCellModel, style: DetailVCStyle) -> UIViewController {
-        let vm = DetailViewModel(model: model, style: style)
-        let vc = DetailViewController(viewModel: vm)
+    static func mainNib() -> UIViewController {
+        let vc = UINib(nibName: "MainViewControllerXib", bundle: nil).instantiate(withOwner: nil, options: nil).first as! MainViewController
         return vc
+    }
+    
+    static func detail(string: String, style: ConstantStyle) -> DetailViewController {
+        let vm = DetailViewModel(string: string, style: style)
+        return DetailViewController(viewModel: vm)
     }
 }

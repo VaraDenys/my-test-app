@@ -33,6 +33,7 @@ class DetailScrollView: ScrollView {
     override func layoutSubviews() {
         super.layoutSubviews()
         centerImageView()
+        setCurrentScale(imageSize: imageView.image?.size ?? .zero)
     }
     
     //  MARK: - Private func
@@ -75,6 +76,13 @@ class DetailScrollView: ScrollView {
     public func configure(image: UIImage) {
         self.imageView.image = image
         setCurrentScale(imageSize: image.size)
+    }
+    
+    public override func layoutIfNeeded() {
+        super.layoutIfNeeded()
+        
+        self.centerImageView()
+        self.setCurrentScale(imageSize: self.imageView.image?.size ?? .zero)
     }
 }
 

@@ -12,13 +12,14 @@ class MainViewModel: ViewModel {
     // MARK: - Private properties
     
     private let service = MyJsonService()
+    private var content: [Content] = []
     private var tableViewModels: [MainTableViewModel] = []
     
     // MARK: - Public properties
     
     var onDidChange: (() -> Void)!
     var onDidError: ((ApiErrorType) -> Void)!
-    var onDidSelectCellImage: ((UIViewController) -> Void)!
+    var onDidSelectCell: ((DetailViewController, ConstantStyle) -> Void)!
     var onDidSelectCellText: ((UIViewController) -> Void)!
     
     // MARK: - Public func
@@ -27,6 +28,7 @@ class MainViewModel: ViewModel {
         service.getContent { [weak self] result in
             switch result {
             case .success(let res):
+                self?.content = res
                 var imagesArray: [UIImage]? = nil
                 res.forEach { content in
                     if let images = content.images {
@@ -62,15 +64,16 @@ class MainViewModel: ViewModel {
     }
     
     public func didSelectCell(indexPath: IndexPath) {
-        let model = self.getItem(for: indexPath)
-        if model.image != nil {
-            let vc = Screens.detail(model: model, style: .image)
+        let model = self.getStringAndStyle(from: indexPath)
+        switch model.style {
+        case .text:
+            let vc = Screens.detail(string: model.string, style: .text)
             vc.modalPresentationStyle = .fullScreen
-            vc.modalTransitionStyle = .coverVertical
-            onDidSelectCellImage(vc)
-        } else {
-            let vc = Screens.detail(model: model, style: .text)
-            onDidSelectCellImage(vc)
+            vc.modalTransitionStyle = .partialCurl
+            onDidSelectCell(vc, .text)
+        case .image:
+            let vc = Screens.detail(string: model.string, style: .image)
+            onDidSelectCell(vc, .image)
         }
     }
     
@@ -103,5 +106,15 @@ class MainViewModel: ViewModel {
             text: nil,
             image: model.images?[indexPath.row]
         )
+    }
+    
+//    MARK: - Private func
+    
+    private func getStringAndStyle(from indexPath: IndexPath) -> (string: String, style: ConstantStyle) {
+        let cont = self.content[indexPath.section]
+        guard let texts = cont.texts else {
+            return (cont.images?[indexPath.row] ?? "", .image)
+        }
+        return (texts[indexPath.row], .text)
     }
 }

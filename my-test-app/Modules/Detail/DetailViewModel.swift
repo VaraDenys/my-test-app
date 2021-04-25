@@ -11,26 +11,50 @@ class DetailViewModel: ViewModel {
     
     // MARK: - Private properties
     
+    private let service = MyJsonService()
+    private var stringValue: String = ""
     private var image: UIImage? = nil
     private var text: String? = nil
-    var style: DetailVCStyle!
+    private var style: ConstantStyle!
+    
+//    MARK: - Public properties
+    
+    var onDidChange: ((ConstantStyle) -> Void)!
     
     // MARK: - Init
     
-    init(model: MainCellModel, style: DetailVCStyle) {
+    init(string: String, style: ConstantStyle) {
         super.init()
+
+        self.stringValue = string
         self.style = style
-        switch style {
-        case .image:
-            self.image = model.image
-        case .text:
-            self.text = model.text
-        }
     }
     
     // MARK: - Public func
     
-    public func getStyle() -> DetailVCStyle {
+    public func resumeFetch() {
+        switch self.style {
+        case .text:
+            self.image = nil
+            self.text = stringValue
+            self.onDidChange(.text)
+        case .image:
+            self.text = nil
+            service.getImage(url: stringValue) { (result) in
+                switch result {
+                case .success(let image):
+                    self.image = image
+                    self.onDidChange(.image)
+                case .failure(_): break
+//                    do something
+                }
+            }
+        default:
+            break
+        }
+    }
+    
+    public func getStyle() -> ConstantStyle {
         return self.style
     }
     
@@ -41,11 +65,4 @@ class DetailViewModel: ViewModel {
     public func getImage() -> UIImage {
         return self.image ?? UIImage()
     }
-}
-
-// MARK: - Style
-
-enum DetailVCStyle {
-    case image
-    case text
 }

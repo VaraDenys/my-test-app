@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <viewController id="6dE-BX-XOK" customClass="MainViewController" customModule="my_test_app" customModuleProvider="target">
+            <view key="view" contentMode="scaleToFill" id="L6l-hD-zze">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="i6F-4i-cbA">
+                        <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </tableView>
+                </subviews>
+                <viewLayoutGuide key="safeArea" id="XCM-cb-RlE"/>
+                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                <constraints>
+                    <constraint firstItem="i6F-4i-cbA" firstAttribute="trailing" secondItem="XCM-cb-RlE" secondAttribute="trailing" id="QLI-du-fqD"/>
+                    <constraint firstItem="i6F-4i-cbA" firstAttribute="top" secondItem="XCM-cb-RlE" secondAttribute="top" id="TDN-gQ-SHa"/>
+                    <constraint firstItem="i6F-4i-cbA" firstAttribute="leading" secondItem="XCM-cb-RlE" secondAttribute="leading" id="mWE-3I-SPu"/>
+                    <constraint firstItem="XCM-cb-RlE" firstAttribute="bottom" secondItem="i6F-4i-cbA" secondAttribute="bottom" id="zsb-tN-gkT"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="tableViewNib" destination="i6F-4i-cbA" id="3c2-9U-QXB"/>
+            </connections>
+            <point key="canvasLocation" x="-494" y="-115"/>
+        </viewController>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

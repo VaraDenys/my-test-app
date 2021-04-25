@@ -39,8 +39,9 @@ class QuizViewController: ViewController<QuizViewModel> {
     override func setupView() {
         super.setupView()
         
-        buttonProgr.configure(title: "programmatically")
-        buttonStory.configure(title: "storyboard")
+        
+        buttonProgr.configure(realization: .programmatically)
+        buttonStory.configure(realization: .storyboard)
     }
     
     override func binding() {
@@ -55,13 +56,11 @@ class QuizViewController: ViewController<QuizViewModel> {
     }
     
     @objc private func tapButton(sender: QuizButton) {
-        switch sender.titleLabel?.text {
-        case "programmatically":
+        switch sender.realization {
+        case .storyboard:
+            navigationController?.pushViewController(Screens.mainNib(), animated: true)
+        case .programmatically:
             navigationController?.pushViewController(Screens.main(), animated: true)
-        case "storyboard":
-            navigationController?.pushViewController(Screens.main(), animated: true)
-        default:
-            break
         }
     }
 }
