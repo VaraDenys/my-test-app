@@ -65,7 +65,7 @@ class MainViewController: ViewController<MainViewModel> {
     override func setupViewFromNib() {
         super.setupViewFromNib()
         
-        let nib = UINib(nibName: "MainTableViewCell", bundle: nil)
+        let nib = UINib(nibName: "MainTableViewCellXib", bundle: nil)
         tableViewNib.register(nib, forCellReuseIdentifier: "MainTableViewCell")
         tableViewNib.delegate = self
         tableViewNib.dataSource = self

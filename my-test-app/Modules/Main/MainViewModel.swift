@@ -29,7 +29,7 @@ class MainViewModel: ViewModel {
             switch result {
             case .success(let res):
                 self?.content = res
-                var imagesArray: [UIImage]? = nil
+                var imagesArray: [UIImage] = []
                 res.forEach { content in
                     if let images = content.images {
                         self?.service.getImages(for: images) { resultImages in

@@ -29,11 +29,6 @@ class DetailViewController: ViewController<DetailViewModel> {
         viewModel.resumeFetch()
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        scrollView.layoutSubviews()
-    }
-    
     // MARK: - Override func
     
     override func setupConstraints() {
@@ -57,7 +52,6 @@ class DetailViewController: ViewController<DetailViewModel> {
         switch viewModel.getStyle() {
         case .image:
             view.backgroundColor = .black
-            scrollView.configure(image: viewModel.getImage())
         case .text:
             labelView.numberOfLines = 0
             labelView.textAlignment = .center

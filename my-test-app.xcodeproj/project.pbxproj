@@ -14,7 +14,7 @@
 		EC95FBEF26335D590015686B /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC95FBEE26335D590015686B /* QuizViewModel.swift */; };
 		EC95FC082635F7BB0015686B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC95FC072635F7BB0015686B /* Constants.swift */; };
 		EC95FC2326361A850015686B /* MainViewControllerXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC95FC2226361A850015686B /* MainViewControllerXib.xib */; };
-		EC95FC26263625400015686B /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC95FC25263625400015686B /* MainTableViewCell.xib */; };
+		EC95FC26263625400015686B /* MainTableViewCellXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC95FC25263625400015686B /* MainTableViewCellXib.xib */; };
 		ECE4372E2631F1DC00FB2CEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE4372D2631F1DC00FB2CEB /* AppDelegate.swift */; };
 		ECE437372631F1DD00FB2CEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECE437362631F1DD00FB2CEB /* Assets.xcassets */; };
 		ECE4373A2631F1DD00FB2CEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECE437382631F1DD00FB2CEB /* LaunchScreen.storyboard */; };
@@ -48,7 +48,7 @@
 		EC95FBEE26335D590015686B /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
 		EC95FC072635F7BB0015686B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EC95FC2226361A850015686B /* MainViewControllerXib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewControllerXib.xib; sourceTree = "<group>"; };
-		EC95FC25263625400015686B /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
+		EC95FC25263625400015686B /* MainTableViewCellXib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCellXib.xib; sourceTree = "<group>"; };
 		ECE4372A2631F1DC00FB2CEB /* my-test-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "my-test-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECE4372D2631F1DC00FB2CEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECE437362631F1DD00FB2CEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				EC95FC2226361A850015686B /* MainViewControllerXib.xib */,
-				EC95FC25263625400015686B /* MainTableViewCell.xib */,
+				EC95FC25263625400015686B /* MainTableViewCellXib.xib */,
 			);
 			path = XibFiles;
 			sourceTree = "<group>";
@@ -386,7 +386,7 @@
 			files = (
 				ECE4373A2631F1DD00FB2CEB /* LaunchScreen.storyboard in Resources */,
 				ECE437372631F1DD00FB2CEB /* Assets.xcassets in Resources */,
-				EC95FC26263625400015686B /* MainTableViewCell.xib in Resources */,
+				EC95FC26263625400015686B /* MainTableViewCellXib.xib in Resources */,
 				EC95FC2326361A850015686B /* MainViewControllerXib.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
