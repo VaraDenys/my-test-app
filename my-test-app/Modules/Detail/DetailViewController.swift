@@ -24,8 +24,8 @@ class DetailViewController: ViewController<DetailViewModel> {
     
     //    MARK: - Life cycle
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         viewModel.resumeFetch()
     }
     

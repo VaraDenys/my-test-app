@@ -11,6 +11,5 @@ import UIKit
 
 struct MainTableViewModel {
     var sectionTitle: String
-    var images: [UIImage]?
-    var texts: [String]?
+    var cellModel: [MainCellModel]
 }

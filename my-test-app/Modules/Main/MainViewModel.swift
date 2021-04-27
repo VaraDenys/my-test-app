@@ -29,31 +29,29 @@ class MainViewModel: ViewModel {
             switch result {
             case .success(let res):
                 self?.content = res
-                var imagesArray: [UIImage] = []
                 res.forEach { content in
                     if let images = content.images {
-                        self?.service.getImages(for: images) { resultImages in
-                            switch resultImages {
+                        self?.service.getImages(for: images) { (result) in
+                            switch result {
                             case .success(let images):
-                                imagesArray = images
-                                self?.tableViewModels.append(
-                                    MainTableViewModel(
-                                        sectionTitle: content.sectionTitle,
-                                        images: imagesArray,
-                                        texts: nil)
-                                )
+                                var resultModels: [MainCellModel] = []
+                                images.forEach { (image) in
+                                    resultModels.append(MainCellModel(text: nil, image: image))
+                                }
+                                let model = MainTableViewModel(sectionTitle: content.sectionTitle, cellModel: resultModels)
+                                self?.tableViewModels.append(model)
                                 self?.onDidChange()
-                            case .failure(let error):
-                                debugPrint(error.localizedDescription)
+                            case .failure(_): break
+//                                to do something with error
                             }
                         }
                     } else {
-                        self?.tableViewModels.append(
-                            MainTableViewModel(
-                                sectionTitle: content.sectionTitle,
-                                images: nil,
-                                texts: content.texts)
-                        )
+                        var cellModels: [MainCellModel] = []
+                        content.texts?.forEach({ (string) in
+                            cellModels.append(MainCellModel(text: string, image: nil))
+                        })
+                        let model = MainTableViewModel(sectionTitle: content.sectionTitle, cellModel: cellModels)
+                        self?.tableViewModels.append(model)
                         self?.onDidChange()
                     }
                 }
@@ -68,11 +66,10 @@ class MainViewModel: ViewModel {
         switch model.style {
         case .text:
             let vc = Screens.detail(string: model.string, style: .text)
-            vc.modalPresentationStyle = .fullScreen
-            vc.modalTransitionStyle = .partialCurl
             onDidSelectCell(vc, .text)
         case .image:
             let vc = Screens.detail(string: model.string, style: .image)
+            vc.modalPresentationStyle = .fullScreen
             onDidSelectCell(vc, .image)
         }
     }
@@ -94,18 +91,15 @@ class MainViewModel: ViewModel {
     }
     
     public func getCount(for section: Int) -> Int {
-        return (tableViewModels[section].images?.count ?? tableViewModels[section].texts?.count) ?? 0
+        return tableViewModels[section].cellModel.count
     }
     
     public func getItem(for indexPath: IndexPath) -> MainCellModel {
         let model = self.tableViewModels[indexPath.section]
-        guard model.images != nil else {
-            return MainCellModel(text: model.texts?[indexPath.row], image: nil)
+        guard let image = model.cellModel[indexPath.row].image else {
+            return MainCellModel(text: model.cellModel[indexPath.row].text, image: nil)
         }
-        return MainCellModel(
-            text: nil,
-            image: model.images?[indexPath.row]
-        )
+        return MainCellModel(text: nil, image: image)
     }
     
 //    MARK: - Private func
