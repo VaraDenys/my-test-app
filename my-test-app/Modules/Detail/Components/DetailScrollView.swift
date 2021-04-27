@@ -12,6 +12,7 @@ class DetailScrollView: ScrollView {
     // MARK: - Private properties
     
     private lazy var imageView = UIImageView()
+    var minScale: CGFloat = .zero
     
     // MARK: - Override func
     
@@ -32,6 +33,9 @@ class DetailScrollView: ScrollView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        if !isZooming, zoomScale == minScale {
+            self.setCurrentScale(imageSize: imageView.image?.size ?? .zero)
+        }
         centerImageView()
     }
     
@@ -46,6 +50,7 @@ class DetailScrollView: ScrollView {
         let yScale = boundsSize.height / heigh
         let minScale = min(xScale, yScale)
         
+        self.minScale = minScale
         minimumZoomScale = minScale
         maximumZoomScale = minScale * 5
         zoomScale = minScale
@@ -74,7 +79,7 @@ class DetailScrollView: ScrollView {
     
     public func configure(image: UIImage) {
         self.imageView.image = image
-        setCurrentScale(imageSize: image.size)
+        self.setCurrentScale(imageSize: image.size)
     }
 }
 
