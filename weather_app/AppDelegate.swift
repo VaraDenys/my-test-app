@@ -13,9 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
         let frame = UIScreen.main.bounds
-        let vc = ViewController()
+        let vc = Screens.launchViewController()
         let navVC = UINavigationController(rootViewController: vc)
         self.window = UIWindow(frame: frame)
         window?.rootViewController = navVC
