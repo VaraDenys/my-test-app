@@ -10,6 +10,7 @@ import UIKit
 
 class MainViewController: UIViewController {
     private let header = HeaderView()
+    private let hourlyContainerView = HourlyContainerView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,13 @@ class MainViewController: UIViewController {
             $0.leading.trailing.equalToSuperview().inset(35)
             $0.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(20)
             $0.height.equalTo(250)
+        }
+        
+        self.view.addSubview(hourlyContainerView)
+        self.hourlyContainerView.snp.makeConstraints {
+            $0.top.equalTo(header.snp.bottom).offset(15)
+            $0.leading.trailing.equalToSuperview().inset(35)
+            $0.height.equalTo(100)
         }
     }
 }

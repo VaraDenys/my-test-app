@@ -21,6 +21,9 @@
 		ECD7606028BBEE88001391A4 /* HeaderWeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD7605F28BBEE88001391A4 /* HeaderWeatherInfo.swift */; };
 		ECD7606328BC07A2001391A4 /* OpenWeaterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD7606228BC07A2001391A4 /* OpenWeaterAPI.swift */; };
 		ECD7606628BC0B5F001391A4 /* WeatherInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD7606528BC0B5F001391A4 /* WeatherInfoModel.swift */; };
+		ECF599B128DE41B30073B642 /* HourlyContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF599B028DE41B30073B642 /* HourlyContainerView.swift */; };
+		ECF599B328DE44570073B642 /* HourlyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF599B228DE44570073B642 /* HourlyCollectionViewCell.swift */; };
+		ECF599B628DE537C0073B642 /* HourlyCellInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF599B528DE537C0073B642 /* HourlyCellInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		ECD7605F28BBEE88001391A4 /* HeaderWeatherInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderWeatherInfo.swift; sourceTree = "<group>"; };
 		ECD7606228BC07A2001391A4 /* OpenWeaterAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeaterAPI.swift; sourceTree = "<group>"; };
 		ECD7606528BC0B5F001391A4 /* WeatherInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfoModel.swift; sourceTree = "<group>"; };
+		ECF599B028DE41B30073B642 /* HourlyContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyContainerView.swift; sourceTree = "<group>"; };
+		ECF599B228DE44570073B642 /* HourlyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyCollectionViewCell.swift; sourceTree = "<group>"; };
+		ECF599B528DE537C0073B642 /* HourlyCellInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyCellInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,7 @@
 			children = (
 				EC9A9DD1288885C60076E626 /* MainViewController.swift */,
 				ECD7605828BBC17E001391A4 /* HeaderView */,
+				ECF599AF28DE41940073B642 /* HourlyContainerView */,
 				ECD7606728BC0E40001391A4 /* HourlyInfoView */,
 				ECD7606828BC0E69001391A4 /* WeekInfoView */,
 			);
@@ -182,6 +189,24 @@
 				ECD7605F28BBEE88001391A4 /* HeaderWeatherInfo.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		ECF599AF28DE41940073B642 /* HourlyContainerView */ = {
+			isa = PBXGroup;
+			children = (
+				ECF599B428DE53670073B642 /* HourlyCellInfo */,
+				ECF599B028DE41B30073B642 /* HourlyContainerView.swift */,
+				ECF599B228DE44570073B642 /* HourlyCollectionViewCell.swift */,
+			);
+			path = HourlyContainerView;
+			sourceTree = "<group>";
+		};
+		ECF599B428DE53670073B642 /* HourlyCellInfo */ = {
+			isa = PBXGroup;
+			children = (
+				ECF599B528DE537C0073B642 /* HourlyCellInfo.swift */,
+			);
+			path = HourlyCellInfo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,13 +325,16 @@
 			files = (
 				EC9A9DD2288885C60076E626 /* MainViewController.swift in Sources */,
 				ECD7605A28BBC193001391A4 /* HeaderView.swift in Sources */,
+				ECF599B328DE44570073B642 /* HourlyCollectionViewCell.swift in Sources */,
 				ECD7605E28BBCE58001391A4 /* ValueCollectionViewCell.swift in Sources */,
 				EC9A9DCF288884370076E626 /* Screens.swift in Sources */,
 				ECD7606628BC0B5F001391A4 /* WeatherInfoModel.swift in Sources */,
+				ECF599B628DE537C0073B642 /* HourlyCellInfo.swift in Sources */,
 				ECD7605C28BBC446001391A4 /* InfoHeaderView.swift in Sources */,
 				EC9A9DBB288881D20076E626 /* AppDelegate.swift in Sources */,
 				EC9A9DD5288888560076E626 /* LaunchViewController.swift in Sources */,
 				ECD7605728BBBD87001391A4 /* UIColor+app.swift in Sources */,
+				ECF599B128DE41B30073B642 /* HourlyContainerView.swift in Sources */,
 				ECD7606328BC07A2001391A4 /* OpenWeaterAPI.swift in Sources */,
 				ECD7606028BBEE88001391A4 /* HeaderWeatherInfo.swift in Sources */,
 			);
